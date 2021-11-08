@@ -20,9 +20,16 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
+// server.get('/', (req,res) => {
+//   res.send('funciona')
+// })
+
+// server.listen(3001, () => {
+//   console.log(' listening at 3001');}) // quitar cuando se haya configurado lo de la  base de datos de mierda
+
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => { // el false guarda los cambios
   server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
+    console.log(' listening at 3001'); // eslint-disable-line no-console
   });
 });
