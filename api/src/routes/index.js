@@ -11,6 +11,6 @@ const router = Router();
 // Ejemplo: router.use('/auth', authRouter);
 
 router.use('/home',dogGet);
-router.use('/home',dogPost);
+router.use('/form',dogPost);
 
 module.exports = router;

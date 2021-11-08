@@ -23,7 +23,9 @@ router.post('/dog',async (req,res)=>{
              }
          })
      perro.addTemperamento(temperamento); }
- })   
+
+    res.send("it works")
+    })   
 
  
 
