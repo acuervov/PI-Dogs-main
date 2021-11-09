@@ -1,0 +1,16 @@
+.filtro{
+   position: relative;
+   top: -22px;
+   width: 200px;
+   height: 100vh;
+   background-color: #5F656B;
+}
+#peso{
+    position: relative; 
+    top: 0px;
+}
+#nombre{
+    position: relative; 
+    top: 20px;
+    left: -35px;
+}

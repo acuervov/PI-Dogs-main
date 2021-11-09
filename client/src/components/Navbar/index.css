@@ -1,0 +1,28 @@
+.nav{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #0C52A0;
+    height: 50px;
+}
+
+.home{
+   display: grid; 
+   grid-template-columns: repeat(2, 1fr); 
+}
+.logo{
+    height: 50px;
+    width: 50px;
+}
+ 
+.input{
+    padding: 20px;
+}
+
+.Buscar{
+    background-color: #B3BFCC;
+    color:black;
+    border: solid black;
+    border-radius: 5px;
+    position: relative; 
+    top: 2px
+}
