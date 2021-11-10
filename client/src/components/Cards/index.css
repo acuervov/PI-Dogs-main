@@ -1,4 +1,15 @@
 .listado{
-    display: grid;
+
+    width: 1050px;
+    height: 100vh;
+    position: relative; 
+    left: 200px; 
+    top: -563px; 
+    color: black; 
+}
+
+ul{   
+    padding: 20px;
+     display: grid;
     grid-template-columns: repeat(4, 1fr); 
 }

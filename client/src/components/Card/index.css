@@ -1,0 +1,23 @@
+.card{
+    border: solid red;
+    height: 200px;
+    margin: 10px;
+}
+h4{
+    position: relative;
+    top: -15px
+}
+.img{
+    width: 100px; 
+    height: 100px;
+    position: relative;
+    left: -60px;
+    top: -32px; 
+}
+
+.informacion{
+    width: 100px;
+    position: relative; 
+    top: -140px;
+    left: 110px; 
+}

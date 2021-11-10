@@ -5,7 +5,7 @@ import Perrito from './components/Perrito'
 import Random from './components/Random'
 import Landing from './components/Landing'
 import Search from './components/Search'
-import Cards from './components/Cards';
+import Detail from './components/Detail';
 import {Route} from 'react-router-dom'
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         render = {()=> <Landing/>}
      />
      <Route
-        path = '/home'
+        path = '/home/:id?'
         render = {()=> <Home/>}
      />
      <Route
@@ -34,6 +34,10 @@ function App() {
      <Route
         path = '/search'
         render = {()=> <Search/>}
+     />
+     <Route
+        path = '/Dog/:id'
+        render = {()=> <Detail/>}
      />
     </div>
   );

@@ -1,15 +1,26 @@
 import React from "react";
 import './index.css'
+import {connect} from 'react-redux'
+import {orderName, orderPeso} from '../../actions'
+import { Link } from "react-router-dom";
 
-export default function Filtro (){
+export  function Filtro (props){
+    function OrderName (){
+        props.Name();
+    }
+    function orderPeso(){
+        props.Peso(props.Perritos); 
+    }
     return (
         <div className="filtro">
-             <div>
+            <Link to= {'/home'}>
+             <div className="orden">
                 <h4>ordenar</h4>
-                <span id='peso'>peso</span>
-                <span id='nombre'>nombre</span>
+                <button id='peso' onClick={orderPeso}>peso</button>
+                <button id='nombre' onClick={OrderName}>nombre</button>
             </div>
-            <div>
+            </Link>
+            <div className="filtra">
                 <h4>filtrar</h4>
                 <div>
                     <h5>Temperamento</h5>
@@ -25,11 +36,25 @@ export default function Filtro (){
                         </ul>
                     </nav>
                 </div>
-            </div>
+            </div>     
         </div>
     )
 }
 
+const mapStateToProps = state => {
+    return {
+        Perritos: state.listaPerritos,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        Name: () => dispatch(orderName()),
+        Peso: (arreglo) => dispatch(orderPeso(arreglo))
+    }
+}
+
+export default connect (mapStateToProps,mapDispatchToProps)(Filtro)
 //le hace falta implementar: 
 //flecha al frente de peso y nombre que señale si es ascendente o descendente; 
 //menu despleglable con todas las razas y temperamentos

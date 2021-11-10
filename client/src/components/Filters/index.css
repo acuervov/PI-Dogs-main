@@ -14,3 +14,14 @@
     top: 20px;
     left: -35px;
 }
+
+.orden{
+    
+position: relative; 
+top: 15px; 
+}
+
+.filtra{
+    position: relative; 
+    top: 100px; 
+}
