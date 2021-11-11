@@ -18,7 +18,7 @@ export function Detail(props){
         <Nav/>
         <div className="detail">
             <div id="name">{props.detalle[0]? <h1>{props.detalle[0].name}</h1>: <span>No hay perrito</span>}</div>
-            <div id= "imagen">{props.detalle[0]? (props.detalle[0].image? <img src={props.detalle[0].image.url}></img>: <span>No hay foto</span>): <span>No hay perrito</span>}</div>
+            <div id= "imagen">{props.detalle[0]? (props.detalle[0].image? <img src={props.detalle[0].image.url} alt="img"></img>: <span>No hay foto</span>): <span>No hay perrito</span>}</div>
             <div id = "peso">{props.detalle[0]? (props.detalle[0].weigth? <div>Peso aproximado: {props.detalle[0].weight.metric}</div>: props.detalle[0].peso?<div>Peso aproximado: {props.detalle[0].peso}</div>: <span>sin datos de peso</span>): <span>No hay perrito, lo siento</span>}</div>
             <div id ="altura">{props.detalle[0]? (props.detalle[0].height? <div>Altura aproximado: {props.detalle[0].height.metric}</div>: props.detalle[0].altura?<div>Altura aproximado: {props.detalle[0].altura}</div>: <span>sin datos de altura</span>): <span>No hay perrito, lo siento</span>}</div>
             <div id = "años">{props.detalle[0]? (props.detalle[0].life_span? <div>Vida aproximada: {props.detalle[0].life_span}</div>: props.detalle[0].añosvida?<div>Vida aproximada: {props.detalle[0].añosvida}</div>: <span>sin datos de vida</span>): <span>No hay perrito, lo siento</span>}</div>

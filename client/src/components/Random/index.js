@@ -12,7 +12,7 @@ React.useEffect(()=>{
         <div>
            <Nav/>
             <h1>Recarga esta pagina para ver la foto de un perrito random que te alegrara el dia</h1>
-            {props.perrito[0]? <img src={props.perrito[0].url}/>: <span>No hay perrito</span>}
+            {props.perrito[0]? <img src={props.perrito[0].url} alt="img"/>: <span>No hay perrito</span>}
            {props.perrito[0]? <h2>{props.perrito[0].name}</h2>:<span>No hay perrito</span> }
         </div>
     )

@@ -1,7 +1,6 @@
 import './App.css';
 import Home from './components/Home'
 import Form from './components/Form'
-import Perrito from './components/Perrito'
 import Random from './components/Random'
 import Landing from './components/Landing'
 import Search from './components/Search'
@@ -16,16 +15,12 @@ function App() {
         render = {()=> <Landing/>}
      />
      <Route
-        path = '/home/:id?'
+        path = '/home/:id?' //¿funciona sin el "?"?
         render = {()=> <Home/>}
      />
      <Route
         path = '/form'
         render = {()=> <Form/>}
-     />
-     <Route
-        path = '/perrito/:id'
-        render = {()=> <Perrito/>}
      />
      <Route
         path = '/random'

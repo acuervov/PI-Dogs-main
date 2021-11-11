@@ -10,7 +10,6 @@ const { uuid } = require('uuidv4');
 
 router.post('/dog',async (req,res)=>{
     const {name,altura,peso, años, temps} = req.body;
-    console.log("20");
      const perro = await Dog.create({
          id: uuid(),
          name: name,
@@ -27,7 +26,7 @@ router.post('/dog',async (req,res)=>{
      perro.addTemperamento(temperamento); }
 
     res.send("it works")
-    })   
+    })   //falta implementar en el front que envie esta respuesta cuando se haya completado el formulario. 
 
  
 

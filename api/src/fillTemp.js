@@ -23,7 +23,7 @@ module.exports = function temp (){
             // console.log(totalTemp)
            var finalTempList = []; 
            totalTemp.forEach(x => {
-               if (!finalTempList.includes(x)) finalTempList.push(x); 
+               if (!finalTempList.includes(x)) finalTempList.push(x); //verifica que no hayan repetidos
            })
 
            // aquí se pone en la base de datos los temperamentos; 
