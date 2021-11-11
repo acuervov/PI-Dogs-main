@@ -25,3 +25,7 @@ top: 15px;
     position: relative; 
     top: 100px; 
 }
+
+#menutemp{
+    display: list-item; 
+}

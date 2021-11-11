@@ -5,4 +5,6 @@ export const SEARCH = "SEARCH";
 export const GET_TEMPS = "GET_TEMPS"; 
 export const POST_DOG = "POST_DOG"; 
 export const GET_ID = "GET_ID"; 
+export const TEMP_FILTER = "TEMP_FILTER"; 
+export const GET_RANDOM = "GET_RANDOM"; 
 

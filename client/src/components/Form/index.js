@@ -13,13 +13,14 @@ export  function Form (props){
         temps: [], 
     })
 function handleSubmit(){
-     props.post(state); 
-
-    // setSate({ nombre: "", 
-    // altura: "", 
-    // peso: "",
-    // añosVida: "", 
-    // temps: [], })
+    if (!validate(state)) props.post(state); 
+    
+    setSate({ 
+    nombre: "", 
+    altura: "", 
+    peso: "",
+    añosVida: "", 
+    temps: [], })
 }
     
 React.useEffect(()=>
@@ -64,5 +65,33 @@ const mapDispatchToProps = (dispatch) => {
         post: (data) => {dispatch(postDog(data))}
     }
 }
+export function validate(input) {
+    let errors = false 
+    if (!input.nombre) {
+        alert('Name is required')
+      errors = true; 
+    } else if (!/^[A-Za-z0-9]+$/g.test(input.nombre)) {
+        alert('Name is invalid')
+        errors = true; 
+    }
+    
+
+    if (!input.altura) {
+        alert('altura is required')
+      errors = true
+    } else if (!/^[A-Za-z0-9]+$/g.test(input.alutra)) {
+        alert('altura is invalid')
+        errors = true; 
+    }
+
+    if (!input.peso) {
+        alert('peso is required')
+      errors = true
+    } else if (!/^[A-Za-z0-9]+$/g.test(input.peso)) {
+        alert('peso is invalid')
+        errors = true; 
+    }
+    return errors;
+  };
 
 export default connect (mapStateToProps,mapDispatchToProps)(Form)

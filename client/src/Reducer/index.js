@@ -1,9 +1,9 @@
-import {GET_DOGS, NAME_ORDER, PESO_ORDER, SEARCH, GET_TEMPS, POST_DOG, GET_ID} from '../constants'
+import {GET_DOGS, NAME_ORDER,GET_RANDOM, PESO_ORDER, SEARCH, GET_TEMPS, POST_DOG, GET_ID, TEMP_FILTER} from '../constants'
 
 const initialState = {
     listaPerritos: [],
     searchResult: [],
-    perritoRandom: {},
+    perritoRandom: [],
     temperamentos: [],
     exitoPost: "",
     detalle: [],
@@ -45,6 +45,17 @@ export const reducer =  (state = initialState, action) => {
             return {
                 ...state, 
                 detalle: action.payload, 
+            }
+
+        case TEMP_FILTER: 
+            return {
+                ...state, 
+                listaPerritos: action.payload,
+            }
+        case GET_RANDOM: 
+            return {
+                ...state, 
+                perritoRandom: action.payload, 
             }
         default: return state; 
     }

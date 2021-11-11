@@ -9,12 +9,14 @@ const { uuid } = require('uuidv4');
 
 
 router.post('/dog',async (req,res)=>{
-    const {name,altura,peso, temps} = req.body;
+    const {name,altura,peso, años, temps} = req.body;
+    console.log("20");
      const perro = await Dog.create({
          id: uuid(),
          name: name,
          altura: altura,
-         peso: peso, 
+         weight: peso, 
+         añosvida: años, 
      })
      for (let ii = 0; ii < temps.length; ii++){
      const temperamento = await Temperamento.findAll({

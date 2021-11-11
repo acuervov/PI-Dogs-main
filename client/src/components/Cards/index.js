@@ -5,7 +5,6 @@ import Card from '../Card'
 import { Link } from "react-router-dom";
 
 export default function Cards (props){
-    console.log(props.perritos)
     return (
         <div>
             <Filters/>

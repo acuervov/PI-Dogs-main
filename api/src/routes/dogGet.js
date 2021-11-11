@@ -3,6 +3,7 @@ const { Router, response } = require('express');
 const axios = require('axios');
 const {Dog,Temperamento} = require('../db');
 const router = Router();
+const temp = require('../fillTemp')
 
 
 

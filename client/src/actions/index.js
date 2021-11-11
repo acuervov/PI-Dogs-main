@@ -1,4 +1,4 @@
-import {GET_DOGS, NAME_ORDER,PESO_ORDER, SEARCH, GET_TEMPS, POST_DOG, GET_ID} from '../constants'
+import {GET_DOGS, NAME_ORDER,PESO_ORDER, SEARCH,GET_RANDOM, GET_TEMPS, POST_DOG, GET_ID, TEMP_FILTER} from '../constants'
 
 export function getDogs (){
   return function (dispatch){
@@ -90,6 +90,29 @@ export function getDogID (id){
     })
     .then(response => response.json())
     .then(json => dispatch({type: GET_ID, payload: json})); 
+
+  }
+}
+
+export function tempFilter(perritos, temps){
+  return function (dispatch){
+    var result = []; 
+    console.log(temps)
+    for (let ii = 0; ii< temps.length; ii++){
+      var aux = perritos.filter(perro=> {if (perro.temperament)return perro.temperament.includes(temps[ii])})
+      result = result.concat(aux);
+      }
+    dispatch({type: TEMP_FILTER, payload: result})
+  }
+}
+
+export function getRandom (){
+  return function (dispatch){
+    fetch("https://api.thedogapi.com/v1/images/search", {
+      "method": "GET",
+    })
+    .then(response => response.json())
+    .then(json => dispatch({type: GET_RANDOM, payload: json})); 
 
   }
 }

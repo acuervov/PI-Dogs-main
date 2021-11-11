@@ -17,7 +17,7 @@ module.exports = function dog (sequelize) {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    peso: {
+    weight: {
       type: DataTypes.STRING,
       allowNull: false,
     },
