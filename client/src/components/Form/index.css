@@ -11,8 +11,20 @@ input {
     width: 200px;
     position: relative; 
     left: 43%; 
+    top: 25px; 
 }
 
 li {
     list-style: none;
+}
+
+.state{
+    position: relative; 
+    top: 20px; 
+    left: -100px; 
+}
+
+.Nav{
+    position: relative; 
+    left: 69px;
 }

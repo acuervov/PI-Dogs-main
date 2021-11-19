@@ -36,16 +36,14 @@ export  function Filtro (props){
             </Link>
             <div className="filtra">
                 <h4>filtrar</h4>
-                <div>
+                <div className="tempos">
                     <h5>Temperamento</h5>
-                    <nav>
-                        <ul id="menutemp">
-                        {props.Temperamentos.slice(0,5).map(temp => {return <li>
-                   <button key={temp.id} onClick={()=>{setState({...state, temps: state.temps.concat(temp.temperamento.trim())})}}>{temp.temperamento}</button>
-                   </li>
+                    <select  className="state" onChange={event => {setState({...state, temps: state.temps.concat(event.target.value.trim())})}}>
+           {props.Temperamentos.map(temp => {return <option key={temp.id} value = {temp.temperamento} >
+                   {temp.temperamento}
+                   </option>
                    })}
-                        </ul>
-                    </nav>
+            </select>
                 </div>
                 <button onClick={filter}>Enviar</button>
             </div>     

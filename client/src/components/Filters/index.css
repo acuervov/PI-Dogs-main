@@ -29,3 +29,9 @@ top: 15px;
 #menutemp{
     display: list-item; 
 }
+ 
+.tempos .state{
+    position: relative;
+    top: -12px;
+    left: 10px;  
+}

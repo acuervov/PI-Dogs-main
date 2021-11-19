@@ -21,8 +21,8 @@ export function orderPeso(arreglo){
   return function (dispatch){
     var arregla = []; 
     var arreglu = [];
-    arreglo.map(item =>{if(item.hasOwnProperty("weight"))arreglu.push(item)})
-    arreglu.map(item =>{if(item.weight.hasOwnProperty("metric"))arregla.push(item)})
+    arreglo.map(item =>{if(item.hasOwnProperty("weight"))arreglu.push(item); return 0; })
+    arreglu.map(item =>{if(item.weight.hasOwnProperty("metric"))arregla.push(item); return 0; })
     arregla.map(dog => {
       var num =  dog.weight.metric.slice(-2); 
       num = parseInt(num);  
@@ -37,7 +37,7 @@ export function orderPeso(arreglo){
     return 0;
   }
   arregla.sort(compare)
-      })
+  ; return 0; })
     dispatch({type: PESO_ORDER, payload: arregla})
   }
 }
@@ -99,7 +99,7 @@ export function tempFilter(perritos, temps){
     var result = []; 
     console.log(temps)
     for (let ii = 0; ii< temps.length; ii++){
-      var aux = perritos.filter(perro=> {if (perro.temperament)return perro.temperament.includes(temps[ii])})
+      var aux = perritos.filter(perro=> {if (perro.temperament)return perro.temperament.includes(temps[ii]); return 0; })
       result = result.concat(aux);
       }
     dispatch({type: TEMP_FILTER, payload: result})

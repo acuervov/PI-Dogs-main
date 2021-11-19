@@ -10,6 +10,7 @@ export  function Form (props){
         altura: "", 
         peso: "",
         añosVida: "", 
+        origen: "",
         temps: [], 
     })
 function handleSubmit(){
@@ -20,14 +21,15 @@ function handleSubmit(){
     altura: "", 
     peso: "",
     añosVida: "", 
+    origen: "",
     temps: [], })
 }
     
 React.useEffect(()=>
 {
    if (props.Temperamentos.length === 0) props.temp(); 
-
 })
+
     return (
         <div className='form'>
            <Nav/>
@@ -39,14 +41,16 @@ React.useEffect(()=>
            <span>Peso*</span>
            <input type="text" placeholder="Peso" value={state.peso} onChange={event => {setSate({...state, peso: event.target.value})}}></input>
            <span>Años de vida</span>
-           <input type="text" placeholder="Años de vida" value={state.añosVida} onChange={event => {setSate({...state, añosVida: event.target.value})}}></input>
+           <input type="text" placeholder="Años de vida" value={state.añosVida} onChange={event => {setSate({...state, añosVida: event.target.value})}}></input> 
+           <span>Pais de origen</span>
+           <input type="text" value={state.origen} onChange={event => {setSate({...state, origen: event.target.value})}}/>
            <div className="Nav">Temperamentos 
-               <ul id="lista">
-                   {props.Temperamentos.map(temp => {return <li>
-                   <button className="temps" key={temp.id} onClick={()=>{setSate({...state, temps: state.temps.concat(temp.id)})}}>{temp.temperamento}</button>
-                   </li>
+           <select  className="state" onChange={event => {setSate({...state, temps: state.temps.concat(event.target.value)})}}>
+           {props.Temperamentos.map(temp => {return <option key={temp.id} value = {temp.id} >
+                   {temp.temperamento}
+                   </option>
                    })}
-               </ul>
+            </select>
            </div>
            <button type= "submit" id="boton" onClick={handleSubmit}>Enviar</button>
         </div>
