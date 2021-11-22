@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import {getDogID} from '../../actions'
 import Nav from '../Navbar'
 import './index.css'
+import loading from '../../images/loading.gif'
 
 export function Detail(props){
 
@@ -16,15 +17,15 @@ export function Detail(props){
     return (
     <div>
         <Nav/>
-        <div className="detail">
+        <div>{props.detalle[0]?    <div className="detail">
             <div id="name">{props.detalle[0]? <h1>{props.detalle[0].name}</h1>: <span>No hay perrito</span>}</div>
             <div id= "imagen">{props.detalle[0]? (props.detalle[0].image? <img src={props.detalle[0].image.url} alt="img"></img>: <span>No hay foto</span>): <span>No hay perrito</span>}</div>
             <div id = "peso">{props.detalle[0]? (props.detalle[0].weigth? <div>Peso aproximado: {props.detalle[0].weight.metric}</div>: props.detalle[0].peso?<div>Peso aproximado: {props.detalle[0].peso}</div>: <span>sin datos de peso</span>): <span>No hay perrito, lo siento</span>}</div>
-            <div id ="altura">{props.detalle[0]? (props.detalle[0].height? <div>Altura aproximado: {props.detalle[0].height.metric}</div>: props.detalle[0].altura?<div>Altura aproximado: {props.detalle[0].altura}</div>: <span>sin datos de altura</span>): <span>No hay perrito, lo siento</span>}</div>
+            <div id ="altura">{props.detalle[0]? (props.detalle[0].height? <div>Altura aproximado: {props.detalle[0].height.metric} Cm</div>: props.detalle[0].altura?<div>Altura aproximado: {props.detalle[0].altura}</div>: <span>sin datos de altura</span>): <span>No hay perrito, lo siento</span>}</div>
             <div id = "años">{props.detalle[0]? (props.detalle[0].life_span? <div>Vida aproximada: {props.detalle[0].life_span}</div>: props.detalle[0].añosvida?<div>Vida aproximada: {props.detalle[0].añosvida}</div>: <span>sin datos de vida</span>): <span>No hay perrito, lo siento</span>}</div>
             <div id =" temperamentos">{props.detalle[0]? (props.detalle[0].temperament? <div>Temperamento: {props.detalle[0].temperament}</div>: props.detalle[0].temperamentos?<div>Temperamentos {props.detalle[0].temperamentos.map(temp => <li>{temp.temperamento}</li>)}</div>: <span>sin datos de temperamento</span>): <span>No hay perrito, lo siento</span>}</div>
             <div id = "origen">{props.detalle[0]? props.detalle[0].origen? <div>Origen: {props.detalle[0].origen}</div>:  <span>No hay origen</span>: <span>No hay perrito</span>}</div>
-        </div>
+        </div>: <img id="loading"src={loading} alt="cargando"/>}</div>
     </div>
     )
 }

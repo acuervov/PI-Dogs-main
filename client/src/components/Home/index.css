@@ -3,3 +3,10 @@
  top: 50px; 
  right: 100px;
 }
+
+#loading{
+    width: 100px;
+    height: 100px; 
+    position: relative; 
+    top: 200px; 
+}

@@ -6,6 +6,7 @@ import {getDogs} from '../../actions'
 import {connect} from 'react-redux'
 import { useParams } from 'react-router';
 import { Link } from "react-router-dom";
+import loading from '../../images/loading.gif'
 
 export function Home (props){
 
@@ -31,7 +32,7 @@ var perritosPagina = paginaActual(id, props);
     return (
         <div>   
             <Nav/>
-            <Cards perritos = {perritosPagina}/>
+            {props.Perritos.length === 0? <img id="loading" src={loading} alt="cargando"/>:  <Cards perritos = {perritosPagina}/>}
             {!id? <div className='botones'>
             <Link to ={"/home/"}>
             <button className='botoncito'>previo</button>
